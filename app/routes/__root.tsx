@@ -36,7 +36,7 @@ function RootDocument({children}: Readonly<{children: ReactNode}>) {
 				<Meta />
 			</head>
 			<body>
-				{children}
+				a{children}
 				<Scripts />
 			</body>
 		</html>
