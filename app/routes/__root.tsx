@@ -1,10 +1,26 @@
-// app/routes/__root.tsx
-import {Outlet, createRootRoute} from '@tanstack/react-router';
-import {Meta, Scripts} from '@tanstack/start';
-import type {ReactNode} from 'react';
+import {
+	Outlet,
+	createRootRoute,
+	HeadContent,
+	Scripts,
+} from '@tanstack/react-router';
+import appCss from '../../styles/app.css?url';
 
 export const Route = createRootRoute({
 	head: () => ({
+		scripts: [
+			{
+				children: `import RefreshRuntime from "/_build/@react-refresh";
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true;
+`,
+				type: 'module',
+				suppressHydrationWarning: true,
+				async: true,
+			},
+		],
 		meta: [
 			{
 				charSet: 'utf-8',
@@ -14,14 +30,20 @@ export const Route = createRootRoute({
 				content: 'width=device-width, initial-scale=1',
 			},
 			{
-				title: 'TanStack Start Starter',
+				title: 'Root-page',
+			},
+		],
+		links: [
+			{
+				rel: 'stylesheet',
+				href: appCss,
 			},
 		],
 	}),
 	component: RootComponent,
 });
 
-function RootComponent() {
+export function RootComponent() {
 	return (
 		<RootDocument>
 			<Outlet />
@@ -29,14 +51,17 @@ function RootComponent() {
 	);
 }
 
-function RootDocument({children}: Readonly<{children: ReactNode}>) {
+export default function RootDocument({
+	children,
+}: Readonly<{children: React.ReactNode}>) {
 	return (
 		<html>
 			<head>
-				<Meta />
+				<HeadContent />
 			</head>
 			<body>
-				a{children}
+				{children}
+
 				<Scripts />
 			</body>
 		</html>
