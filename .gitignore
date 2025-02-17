@@ -9,3 +9,5 @@ node_modules
 *.log 
 dist/ 
 target/
+
+app.config.timestamp_*

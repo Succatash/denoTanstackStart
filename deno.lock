@@ -1,6 +1,7 @@
 {
   "version": "4",
   "specifiers": {
+    "npm:@deno/vite-plugin@^1.0.4": "1.0.4_vite@6.1.0__@types+node@22.5.4_@types+node@22.5.4",
     "npm:@hookform/resolvers@^4.1.0": "4.1.0_react-hook-form@7.54.2__react@19.0.0_react@19.0.0",
     "npm:@radix-ui/react-accordion@^1.2.3": "1.2.3_@types+react@19.0.8_@types+react-dom@19.0.3__@types+react@19.0.8_react@19.0.0_react-dom@19.0.0__react@19.0.0",
     "npm:@radix-ui/react-alert-dialog@^1.1.6": "1.1.6_@types+react@19.0.8_@types+react-dom@19.0.3__@types+react@19.0.8_react@19.0.0_react-dom@19.0.0__react@19.0.0",
@@ -248,6 +249,12 @@
       "dependencies": [
         "@deno/shim-deno-test",
         "which@4.0.0"
+      ]
+    },
+    "@deno/vite-plugin@1.0.4_vite@6.1.0__@types+node@22.5.4_@types+node@22.5.4": {
+      "integrity": "sha512-xg8YT8Wn2sGXSnJgiGTpBGX1Dov0c6fd1rAp8VsfrCUtyBRRWzwVMAnd3fQ4yq8h7LSVvJUxEFN4U421k/DQLA==",
+      "dependencies": [
+        "vite@6.1.0_@types+node@22.5.4"
       ]
     },
     "@esbuild/aix-ppc64@0.20.2": {
@@ -4798,6 +4805,7 @@
   },
   "workspace": {
     "dependencies": [
+      "npm:@deno/vite-plugin@^1.0.4",
       "npm:@hookform/resolvers@^4.1.0",
       "npm:@radix-ui/react-accordion@^1.2.3",
       "npm:@radix-ui/react-alert-dialog@^1.1.6",

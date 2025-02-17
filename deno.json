@@ -6,7 +6,8 @@
 		"start": "vinxi start"
 	},
 	"imports": {
-		"~/": "./app/",
+		"@/": "./app/",
+		"@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",
 		"@hookform/resolvers": "npm:@hookform/resolvers@^4.1.0",
 		"@radix-ui/react-accordion": "npm:@radix-ui/react-accordion@^1.2.3",
 		"@radix-ui/react-alert-dialog": "npm:@radix-ui/react-alert-dialog@^1.1.6",
@@ -64,30 +65,15 @@
 	},
 	"nodeModulesDir": "auto",
 	"compilerOptions": {
-		"jsx": "react-jsxdev",
+		"jsx": "react-jsx",
 		"jsxImportSource": "react",
-		"lib": [
-			"deno.window",
-			"deno.unstable",
-			"deno.ns",
-			"dom",
-			"esnext",
-			"es2022",
-			"dom.iterable",
-			"dom.asynciterable"
-		],
+		"jsxFactory": "React.createElement",
+		"jsxFragmentFactory": "React.Fragment",
+
+		"lib": ["DOM", "DOM.Iterable", "ESNext", "Deno.Unstable", "Deno.ns"],
 		"strictNullChecks": true,
 		"allowJs": true,
-		"strict": true,
-
-		"types": [
-			"react",
-			"@types/react",
-			"react-dom",
-			"@types/react-dom",
-			"node",
-			"typescript",
-			"deno.ns"
-		]
-	}
+		"strict": true
+	},
+	"exclude": ["node_modules", "dist"]
 }
