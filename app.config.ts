@@ -13,4 +13,5 @@ export default defineConfig({
 		addExtensions: true,
 		autoCodeSplitting: true,
 	},
+	server: {preset: 'deno'},
 });
