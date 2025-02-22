@@ -3,7 +3,10 @@
 	"tasks": {
 		"dev": "vinxi dev",
 		"build": "vinxi build",
-		"start": "vinxi start"
+		"start": "vinxi start",
+		"db:generate": "deno -A  --unstable-detect-cjs npm:drizzle-kit generate",
+		"db:push": "deno run --allow-net --node-modules-dir --allow-env --allow-read --allow-sys --allow-write --allow-run npm:drizzle-kit push",
+		"serve": "deno serve --watch --allow-net --allow-env --allow-read --allow-sys --env-file=.env.development ./app/ssr.tsx"
 	},
 	"imports": {
 		"@/": "./app/",
@@ -36,11 +39,12 @@
 		"@radix-ui/react-toggle": "npm:@radix-ui/react-toggle@^1.1.2",
 		"@radix-ui/react-toggle-group": "npm:@radix-ui/react-toggle-group@^1.1.2",
 		"@radix-ui/react-tooltip": "npm:@radix-ui/react-tooltip@^1.1.8",
-		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4.0.6",
-		"@tanstack/react-router": "npm:@tanstack/react-router@^1.102.5",
-		"@tanstack/start": "npm:@tanstack/start@^1.102.5",
-		"@types/react": "npm:@types/react@^19.0.8",
-		"@types/react-dom": "npm:@types/react-dom@^19.0.3",
+		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4.0.7",
+		"@tanstack/react-router": "npm:@tanstack/react-router@^1.109.2",
+		"@tanstack/start": "npm:@tanstack/start@^1.109.2",
+		"@types/node": "npm:@types/node@^22.13.4",
+		"@types/react": "npm:@types/react@^19.0.10",
+		"@types/react-dom": "npm:@types/react-dom@^19.0.4",
 		"@vitejs/plugin-react": "npm:@vitejs/plugin-react@^4.3.4",
 		"class-variance-authority": "npm:class-variance-authority@^0.7.1",
 		"clsx": "npm:clsx@^2.1.1",
@@ -52,6 +56,7 @@
 		"embla-carousel-react": "npm:embla-carousel-react@^8.5.2",
 		"input-otp": "npm:input-otp@^1.4.2",
 		"lucide-react": "npm:lucide-react@^0.475.0",
+		"next-themes": "npm:next-themes@^0.4.4",
 		"react": "npm:react@^19.0.0",
 		"react-day-picker": "npm:react-day-picker@^9.5.1",
 		"react-dom": "npm:react-dom@^19.0.0",
@@ -59,9 +64,9 @@
 		"react-resizable-panels": "npm:react-resizable-panels@^2.1.7",
 		"recharts": "npm:recharts@^2.15.1",
 		"redaxios": "npm:redaxios@^0.5.1",
-		"sonner": "npm:sonner@^1.7.4",
+		"sonner": "npm:sonner@^2.0.1",
 		"tailwind-merge": "npm:tailwind-merge@^3.0.1",
-		"tailwindcss": "npm:tailwindcss@^4.0.6",
+		"tailwindcss": "npm:tailwindcss@^4.0.7",
 		"typescript": "npm:typescript@^5.7.3",
 		"vaul": "npm:vaul@^1.1.2",
 		"vinxi": "npm:vinxi@^0.5.3",
@@ -74,10 +79,11 @@
 		"jsxFactory": "React.createElement",
 		"jsxFragmentFactory": "React.Fragment",
 
-		"lib": ["DOM", "DOM.Iterable", "ESNext", "Deno.Unstable", "Deno.ns"],
+		"lib": ["DOM", "DOM.Iterable", "ESNext", "Deno.Unstable", "Deno.ns", ""],
 		"strictNullChecks": true,
 		"allowJs": true,
-		"strict": true
+		"strict": true,
+		"types": ["node"]
 	},
 	"exclude": ["node_modules", "dist"]
 }

@@ -3,6 +3,10 @@ import * as fs from 'node:fs';
 import {createFileRoute, useRouter} from '@tanstack/react-router';
 import {createServerFn} from '@tanstack/start';
 import {Button} from '@/components/ui/button.tsx';
+import {SidebarProvider, SidebarTrigger} from '@/components/ui/sidebar.tsx';
+import {AppSidebar} from '@/components/app-sidebar.tsx';
+import {ReactNode, useState} from 'react';
+import {ModeToggle} from '@/components/mode-toggle.tsx';
 
 const filePath = 'count.txt';
 
@@ -30,36 +34,42 @@ export const Route = createFileRoute('/')({
 	loader: async () => await getCount(),
 });
 
-function Home() {
+function Home({children}: {children: ReactNode}) {
 	const router = useRouter();
 	const state = Route.useLoaderData();
+	const [open, setOpen] = useState(false);
 
 	return (
 		<>
-			<button
-				type="button"
-				className="bg-red-400"
-				onClick={() => {
-					updateCount({data: 1}).then(() => {
-						router.invalidate();
-					});
-				}}
-			>
-				Add 1 to {state}?
-			</button>
-			<div className="bg-green-900">hello 20003243ASDF 2d3</div>
-			<Button
-				variant="destructive"
-				type="button"
-				className="bg-red-400"
-				onClick={() => {
-					updateCount({data: 2}).then(() => {
-						router.invalidate();
-					});
-				}}
-			>
-				Add 2
-			</Button>
+			<SidebarProvider open={open} onOpenChange={setOpen}>
+				<AppSidebar />
+				<main>
+					<div className="flex flex-row justify-center items-center space-x-2">
+						{/* TODO: Add a custom trigger button with custom Icons */}
+						<SidebarTrigger />{' '}
+						{open ? (
+							<p className="text-xs">Close Sidebar</p>
+						) : (
+							<p className="text-xs">Open Sidebar</p>
+						)}
+					</div>
+					<ModeToggle />
+					{children}
+					<Button
+						variant="destructive"
+						type="button"
+						className="bg-red-400"
+						onClick={() => {
+							updateCount({data: 2}).then(() => {
+								router.invalidate();
+							});
+						}}
+					>
+						Add 2
+					</Button>
+					<p className="bg-amber-200">Count:{state} </p>
+				</main>
+			</SidebarProvider>
 		</>
 	);
 }

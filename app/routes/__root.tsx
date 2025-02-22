@@ -5,6 +5,7 @@ import {
 	Scripts,
 } from '@tanstack/react-router';
 import appCss from '../../styles/app.css?url';
+import {ThemeProvider} from '@/components/theme-provider.tsx';
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -45,9 +46,11 @@ window.__vite_plugin_react_preamble_installed__ = true;
 
 export function RootComponent() {
 	return (
-		<RootDocument>
-			<Outlet />
-		</RootDocument>
+		<ThemeProvider>
+			<RootDocument>
+				<Outlet />
+			</RootDocument>
+		</ThemeProvider>
 	);
 }
 
