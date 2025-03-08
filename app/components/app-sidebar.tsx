@@ -1,5 +1,7 @@
 import { Calendar, Home, Inbox, Plus, Search, Settings } from "lucide-react";
 
+import { Link } from "@tanstack/react-router";
+
 import {
   Sidebar,
   SidebarContent,
@@ -17,27 +19,27 @@ import { ModeToggle } from "@/components/mode-toggle.tsx";
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/dashboard/form",
     icon: Home,
   },
   {
     title: "Inbox",
-    url: "#",
+    url: "/dashboard/$title",
     icon: Inbox,
   },
   {
     title: "Calendar",
-    url: "#",
+    url: "/dashboard",
     icon: Calendar,
   },
   {
     title: "Search",
-    url: "#",
+    url: "/",
     icon: Search,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/dashboard/form",
     icon: Settings,
   },
 ];
@@ -61,11 +63,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                  <SidebarMenuButton asChild isActive>
+                    <Link to={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -78,7 +80,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton asChild isActive>
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
