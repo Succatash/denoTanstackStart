@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router@latest";
 
 export const Route = createFileRoute("/dashboard/form")({
   component: RouteComponent,
