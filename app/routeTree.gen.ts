@@ -10,151 +10,151 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root.tsx'
-import { Route as DashboardRouteImport } from './routes/dashboard/route.tsx'
-import { Route as IndexImport } from './routes/index.tsx'
-import { Route as AboutIndexImport } from './routes/about/index.tsx'
-import { Route as DashboardFormImport } from './routes/dashboard/form.tsx'
-import { Route as AboutPostIdImport } from './routes/about/$postId.tsx'
+import { Route as rootRoute } from "./routes/__root.tsx";
+import { Route as DashboardRouteImport } from "./routes/dashboard/route.tsx";
+import { Route as IndexImport } from "./routes/index.tsx";
+import { Route as AboutIndexImport } from "./routes/about/index.tsx";
+import { Route as DashboardFormImport } from "./routes/dashboard/form.tsx";
+import { Route as AboutPostIdImport } from "./routes/about/$postId.tsx";
 
 // Create/Update Routes
 
 const DashboardRouteRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
+  id: "/dashboard",
+  path: "/dashboard",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const IndexRoute = IndexImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AboutIndexRoute = AboutIndexImport.update({
-  id: '/about/',
-  path: '/about/',
+  id: "/about/",
+  path: "/about/",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const DashboardFormRoute = DashboardFormImport.update({
-  id: '/form',
-  path: '/form',
+  id: "/form",
+  path: "/form",
   getParentRoute: () => DashboardRouteRoute,
-} as any)
+} as any);
 
 const AboutPostIdRoute = AboutPostIdImport.update({
-  id: '/about/$postId',
-  path: '/about/$postId',
+  id: "/about/$postId",
+  path: "/about/$postId",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 // Populate the FileRoutesByPath interface
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/about/$postId': {
-      id: '/about/$postId'
-      path: '/about/$postId'
-      fullPath: '/about/$postId'
-      preLoaderRoute: typeof AboutPostIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/dashboard/form': {
-      id: '/dashboard/form'
-      path: '/form'
-      fullPath: '/dashboard/form'
-      preLoaderRoute: typeof DashboardFormImport
-      parentRoute: typeof DashboardRouteImport
-    }
-    '/about/': {
-      id: '/about/'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutIndexImport
-      parentRoute: typeof rootRoute
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/dashboard": {
+      id: "/dashboard";
+      path: "/dashboard";
+      fullPath: "/dashboard";
+      preLoaderRoute: typeof DashboardRouteImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/about/$postId": {
+      id: "/about/$postId";
+      path: "/about/$postId";
+      fullPath: "/about/$postId";
+      preLoaderRoute: typeof AboutPostIdImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/dashboard/form": {
+      id: "/dashboard/form";
+      path: "/form";
+      fullPath: "/dashboard/form";
+      preLoaderRoute: typeof DashboardFormImport;
+      parentRoute: typeof DashboardRouteImport;
+    };
+    "/about/": {
+      id: "/about/";
+      path: "/about";
+      fullPath: "/about";
+      preLoaderRoute: typeof AboutIndexImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
 interface DashboardRouteRouteChildren {
-  DashboardFormRoute: typeof DashboardFormRoute
+  DashboardFormRoute: typeof DashboardFormRoute;
 }
 
 const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
   DashboardFormRoute: DashboardFormRoute,
-}
+};
 
 const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
   DashboardRouteRouteChildren,
-)
+);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRouteRouteWithChildren
-  '/about/$postId': typeof AboutPostIdRoute
-  '/dashboard/form': typeof DashboardFormRoute
-  '/about': typeof AboutIndexRoute
+  "/": typeof IndexRoute;
+  "/dashboard": typeof DashboardRouteRouteWithChildren;
+  "/about/$postId": typeof AboutPostIdRoute;
+  "/dashboard/form": typeof DashboardFormRoute;
+  "/about": typeof AboutIndexRoute;
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRouteRouteWithChildren
-  '/about/$postId': typeof AboutPostIdRoute
-  '/dashboard/form': typeof DashboardFormRoute
-  '/about': typeof AboutIndexRoute
+  "/": typeof IndexRoute;
+  "/dashboard": typeof DashboardRouteRouteWithChildren;
+  "/about/$postId": typeof AboutPostIdRoute;
+  "/dashboard/form": typeof DashboardFormRoute;
+  "/about": typeof AboutIndexRoute;
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRouteRouteWithChildren
-  '/about/$postId': typeof AboutPostIdRoute
-  '/dashboard/form': typeof DashboardFormRoute
-  '/about/': typeof AboutIndexRoute
+  __root__: typeof rootRoute;
+  "/": typeof IndexRoute;
+  "/dashboard": typeof DashboardRouteRouteWithChildren;
+  "/about/$postId": typeof AboutPostIdRoute;
+  "/dashboard/form": typeof DashboardFormRoute;
+  "/about/": typeof AboutIndexRoute;
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
-    | '/'
-    | '/dashboard'
-    | '/about/$postId'
-    | '/dashboard/form'
-    | '/about'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/about/$postId' | '/dashboard/form' | '/about'
+    | "/"
+    | "/dashboard"
+    | "/about/$postId"
+    | "/dashboard/form"
+    | "/about";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "/" | "/dashboard" | "/about/$postId" | "/dashboard/form" | "/about";
   id:
-    | '__root__'
-    | '/'
-    | '/dashboard'
-    | '/about/$postId'
-    | '/dashboard/form'
-    | '/about/'
-  fileRoutesById: FileRoutesById
+    | "__root__"
+    | "/"
+    | "/dashboard"
+    | "/about/$postId"
+    | "/dashboard/form"
+    | "/about/";
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  DashboardRouteRoute: typeof DashboardRouteRouteWithChildren
-  AboutPostIdRoute: typeof AboutPostIdRoute
-  AboutIndexRoute: typeof AboutIndexRoute
+  IndexRoute: typeof IndexRoute;
+  DashboardRouteRoute: typeof DashboardRouteRouteWithChildren;
+  AboutPostIdRoute: typeof AboutPostIdRoute;
+  AboutIndexRoute: typeof AboutIndexRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -162,11 +162,11 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRouteRoute: DashboardRouteRouteWithChildren,
   AboutPostIdRoute: AboutPostIdRoute,
   AboutIndexRoute: AboutIndexRoute,
-}
+};
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {

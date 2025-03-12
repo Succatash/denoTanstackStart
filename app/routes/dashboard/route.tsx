@@ -10,11 +10,9 @@ export const Route = createFileRoute("/dashboard")({
   component: DashLayoutComponent,
 });
 function DashLayoutComponent() {
-  const [open, setOpen] = useState(false);
-
   return (
     <>
-      <SidebarProvider open={open} onOpenChange={setOpen}>
+      <SidebarProvider defaultOpen={false}>
         <AppSidebar />
         <main>
           <div className="flex flex-row justify-left items-center ">

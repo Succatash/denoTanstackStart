@@ -1,4 +1,4 @@
-import { createFileRoute, useParams } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 
 export const Route = createFileRoute("/about/$postId")(
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about/$postId")(
 );
 
 function RouteComponent() {
-  const { postId }: number = useParams({ strict: false });
+  const { postId } = Route.useParams();
 
   useEffect(() => {
     document.title = `Post ${postId}`; // Set the dynamic title
