@@ -68,7 +68,6 @@
     "npm:postcss@^8.5.1": "8.5.2",
     "npm:postcss@^8.5.2": "8.5.2",
     "npm:react-day-picker@8.10.1": "8.10.1_date-fns@3.6.0_react@18.3.1",
-    "npm:react-day-picker@^9.5.1": "9.5.1_react@19.0.0",
     "npm:react-dom@19": "19.0.0_react@19.0.0",
     "npm:react-hook-form@^7.54.2": "7.54.2_react@19.0.0",
     "npm:react-resizable-panels@^2.1.7": "2.1.7_react@19.0.0_react-dom@19.0.0__react@19.0.0",
@@ -261,9 +260,6 @@
       "dependencies": [
         "mime@3.0.0"
       ]
-    },
-    "@date-fns/tz@1.2.0": {
-      "integrity": "sha512-LBrd7MiJZ9McsOgxqWX7AaxrDjcFVjWH/tIKJd7pnR7McaslGYOP1QmmiBXdJH/H/yLCT+rcQ7FaPBUxRGUtrg=="
     },
     "@deno/shim-deno-test@0.5.0": {
       "integrity": "sha512-4nMhecpGlPi0cSzT67L+Tm+GOJqvuk8gqHBziqcUQOarnuIax1z96/gJHCSIz2Z0zhxE6Rzwb3IZXPtFh51j+w=="
@@ -2969,14 +2965,8 @@
         "unit-fns"
       ]
     },
-    "date-fns-jalali@4.1.0-0": {
-      "integrity": "sha512-hTIP/z+t+qKwBDcmmsnmjWTduxCg+5KfdqWQvb2X/8C9+knYY6epN/pfxdDuyVlSVeFz0sM5eEfwIUQ70U4ckg=="
-    },
     "date-fns@3.6.0": {
       "integrity": "sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww=="
-    },
-    "date-fns@4.1.0": {
-      "integrity": "sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg=="
     },
     "dax-sh@0.39.2": {
       "integrity": "sha512-gpuGEkBQM+5y6p4cWaw9+ePy5TNon+fdwFVtTI8leU3UhwhsBfPewRxMXGuQNC+M2b/MDGMlfgpqynkcd0C3FQ==",
@@ -4417,17 +4407,8 @@
     "react-day-picker@8.10.1_date-fns@3.6.0_react@18.3.1": {
       "integrity": "sha512-TMx7fNbhLk15eqcMt+7Z7S2KF7mfTId/XJDjKE8f+IUcFn0l08/kI4FiYTL/0yuOLmEcbR4Fwe3GJf/NiiMnPA==",
       "dependencies": [
-        "date-fns@3.6.0",
+        "date-fns",
         "react@18.3.1"
-      ]
-    },
-    "react-day-picker@9.5.1_react@19.0.0": {
-      "integrity": "sha512-PxuK8inYLlYgM2zZUVBPsaBM5jI40suPeG+naKyx7kpyF032RRlEAUEjkpW9/poTASh/vyWAOVqjGuGw+47isw==",
-      "dependencies": [
-        "@date-fns/tz",
-        "date-fns@4.1.0",
-        "date-fns-jalali",
-        "react@19.0.0"
       ]
     },
     "react-dom@18.3.1_react@18.3.1": {
@@ -5468,9 +5449,7 @@
       "npm:input-otp@^1.4.2",
       "npm:lucide-react@0.477",
       "npm:next-themes@~0.4.4",
-      "npm:react-day-picker@^9.5.1",
       "npm:react-dom@19",
-      "npm:react-hook-form@^7.54.2",
       "npm:react-resizable-panels@^2.1.7",
       "npm:react@19",
       "npm:recharts@^2.15.1",
