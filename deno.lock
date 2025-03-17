@@ -39,6 +39,7 @@
     "npm:@tanstack/react-router@^1.109.2": "1.112.0_react@19.0.0_react-dom@19.0.0__react@19.0.0",
     "npm:@tanstack/react-router@^1.112.0": "1.112.0_react@19.0.0_react-dom@19.0.0__react@19.0.0",
     "npm:@tanstack/react-start@^1.112.3": "1.112.3_react@19.0.0_react-dom@19.0.0__react@19.0.0_vite@6.1.0__@types+node@22.5.4_@types+node@22.5.4_drizzle-orm@0.40.0__@neondatabase+serverless@0.10.4_typescript@5.8.2_@neondatabase+serverless@0.10.4",
+    "npm:@tanstack/virtual-file-routes@^1.114.12": "1.114.12",
     "npm:@types/node@*": "22.5.4",
     "npm:@types/node@^22.13.4": "22.13.4",
     "npm:@types/node@^22.13.8": "22.13.8",
@@ -2210,7 +2211,7 @@
       "integrity": "sha512-RUT+O/j7YIjbemVJjkP4qM8MYaaOltKYhyp9VGtcWxWGS8U2QDwC9UsskjBVOj7QV7aq3UcnExicABwK/AMCCQ==",
       "dependencies": [
         "@tanstack/react-router",
-        "@tanstack/virtual-file-routes",
+        "@tanstack/virtual-file-routes@1.99.0",
         "prettier",
         "tsx",
         "zod"
@@ -2229,7 +2230,7 @@
         "@tanstack/router-core",
         "@tanstack/router-generator",
         "@tanstack/router-utils",
-        "@tanstack/virtual-file-routes",
+        "@tanstack/virtual-file-routes@1.99.0",
         "@types/babel__core",
         "@types/babel__template",
         "@types/babel__traverse",
@@ -2308,6 +2309,9 @@
     },
     "@tanstack/store@0.7.0": {
       "integrity": "sha512-CNIhdoUsmD2NolYuaIs8VfWM467RK6oIBAW4nPEKZhg1smZ+/CwtCdpURgp7nxSqOaV9oKkzdWD80+bC66F/Jg=="
+    },
+    "@tanstack/virtual-file-routes@1.114.12": {
+      "integrity": "sha512-aR13V1kSE/kUkP4a8snmqvj82OUlR5Q/rzxICmObLCsERGfzikUc4wquOy1d/RzJgsLb8o+FiOjSWynt4T7Jhg=="
     },
     "@tanstack/virtual-file-routes@1.99.0": {
       "integrity": "sha512-XvX8bfdo4CYiCW+ItVdBfCorh3PwQFqYqd7ll+XKWiWOJpqUGIG7VlziVavARZpUySiY2VBlHadiUYS7jhgjRg=="
@@ -5429,6 +5433,7 @@
       "npm:@tailwindcss/vite@^4.0.9",
       "npm:@tanstack/react-router@^1.112.0",
       "npm:@tanstack/react-start@^1.112.3",
+      "npm:@tanstack/virtual-file-routes@^1.114.12",
       "npm:@types/node@^22.13.8",
       "npm:@types/react-dom@^19.0.4",
       "npm:@types/react@^19.0.10",
