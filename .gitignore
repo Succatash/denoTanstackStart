@@ -11,3 +11,5 @@ dist/
 target/
 
 app.config.timestamp_*
+
+routeTree.gen.ts

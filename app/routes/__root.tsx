@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/components/theme-provider.tsx";
 export const Route = createRootRoute({
   head: () => ({
     scripts: [
+      { src: "https://unpkg.com/react-scan/dist/auto.global.js" },
       {
         children: `import RefreshRuntime from "/_build/@react-refresh";
 RefreshRuntime.injectIntoGlobalHook(window)
